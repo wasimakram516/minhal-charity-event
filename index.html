@@ -91,7 +91,8 @@
             background-color: #218838;
         }
 
-        .back-button, .next-button {
+        .back-button,
+        .next-button {
             position: absolute;
             bottom: 10%;
             background-color: #ffc107;
@@ -108,7 +109,8 @@
             align-items: center;
         }
 
-        .back-button:hover, .next-button:hover {
+        .back-button:hover,
+        .next-button:hover {
             background-color: #e0a800;
         }
 
@@ -152,7 +154,7 @@
             text-align: left;
             font-weight: bold;
             position: absolute;
-            width: 80%;
+            width: auto;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -166,30 +168,81 @@
             button {
                 padding: 20px 40px;
                 margin: 10px;
-                font-size: 40px;
+                font-size: 70px;
                 width: auto;
             }
 
             .donate-button {
-                font-size: 40px;
+                font-size: 70px;
                 padding: 30px;
-                width: auto;
+                width: 100%;
+
             }
 
-            .back-button, .next-button {
+            .back-button,
+            .next-button {
                 width: 80px;
                 height: 80px;
                 padding: 20px;
-                font-size: 40px;
+                font-size: 70px;
             }
 
             .nav-links button {
-                font-size: 40px;
+                font-size: 70px;
                 padding: 30px;
                 width: auto;
             }
+
+            .footer-logo {
+                position: absolute;
+                bottom: 0;
+                right: 5%;
+                text-align: left;
+                background-color: transparent;
+                /* Transparent background */
+                padding: 15px;
+                box-sizing: border-box;
+            }
+
+            .footer-logo span {
+                /* display: block; */
+                font-size: 30px;
+                color: #000;
+                margin-bottom: 5px;
+            }
+
+            .footer-logo img {
+                height: 40px;
+            }
+
         }
 
+        /*--------Footer--------*/
+        .footer-logo {
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            text-align: left;
+            background-color: transparent;
+            /* Transparent background */
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .footer-logo span {
+            /* display: block; */
+            font-size: 10px;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .footer-logo img {
+            height: 30px;
+        }
+
+        .video .footer-logo {
+            display: none;
+        }
     </style>
 </head>
 
@@ -281,6 +334,10 @@
                 </svg>
             </button>
         </div>
+        <div class="footer-logo">
+            <span>Powered by</span>
+            <img src="WWDS.png" alt="Company Logo">
+        </div>
     </div>
 
     <div class="video" id="sadVideo">
@@ -304,6 +361,7 @@
         const happyVideo = document.getElementById('happyVideo');
         const backButtons = document.querySelectorAll('.back-button');
         const nextButtons = document.querySelectorAll('.next-button');
+        const footerLogo = document.querySelector('.footer-logo');
         let currentSlide = 0;
 
         function showSlide(index) {
@@ -316,6 +374,8 @@
             } else {
                 buttons.style.display = 'none';
             }
+
+            footerLogo.style.display = 'block';
         }
 
         function nextSlide() {
@@ -332,6 +392,7 @@
             document.querySelector('.container').style.display = 'none';
             buttons.style.display = 'none';
             sadVideo.style.display = 'block';
+            footerLogo.style.display = 'none';
             const sadVideoElement = sadVideo.querySelector('video');
             sadVideoElement.muted = false;
             sadVideoElement.play();
@@ -342,6 +403,7 @@
                 showSlide(nextSlideIndex);
                 document.querySelector('.container').style.display = 'block';
                 buttons.style.display = 'block';
+                footerLogo.style.display = 'block';
                 showButtons();
             };
         }
@@ -351,6 +413,7 @@
             document.querySelector('.container').style.display = 'none';
             buttons.style.display = 'none';
             happyVideo.style.display = 'block';
+            footerLogo.style.display = 'none';
             const happyVideoElement = happyVideo.querySelector('video');
             happyVideoElement.muted = false;
             happyVideoElement.play();
@@ -361,6 +424,7 @@
                 showSlide(nextSlideIndex);
                 document.querySelector('.container').style.display = 'block';
                 buttons.style.display = 'block';
+                footerLogo.style.display = 'block';
                 showButtons();
             };
         }
