@@ -143,12 +143,15 @@
             background-color: transparent;
             padding: 5px;
             box-sizing: border-box;
+            display: flex;
+            align-items: center; /* Align items vertically */
+            gap: 10px; /* Space between text and logo */
         }
     
         .footer-logo span {
             font-size: 10px;
             color: #000;
-            margin-bottom: 5px;
+            margin-bottom: 0; /* Align with the logo */
         }
     
         .footer-logo img {
@@ -160,7 +163,7 @@
         }
     
         /* Media queries for slightly smaller than 1080x1920 resolution */
-    @media screen and (min-width: 900px) and (min-height: 1600px) {
+        @media screen and (min-width: 900px) and (min-height: 1600px) {
             .donate-button {
                 font-size: 60px;
                 padding: 25px;
