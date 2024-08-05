@@ -14,31 +14,31 @@
             margin: 0;
             cursor: default;
         }
-
+    
         .container {
             width: 100%;
             height: 100vh;
             margin: 0 auto;
             position: relative;
         }
-
+    
         .slide {
             display: none;
             width: 100%;
             height: 100%;
             position: relative;
         }
-
+    
         .slide.active {
             display: block;
         }
-
+    
         .slide img {
             width: 100%;
             height: 100vh;
             object-fit: contain;
         }
-
+    
         .video {
             width: 100%;
             height: 100vh;
@@ -46,34 +46,34 @@
             display: none;
             position: relative;
         }
-
+    
         .video video {
             width: auto;
             height: 100%;
         }
-
+    
         .buttons {
             display: none;
             position: absolute;
-            top: 40%;
-            left: 10%;
+            top: 50%;
+            left: 5%; /* Adjusted to be further left */
             text-align: left;
         }
-
+    
         .donate-button {
             font-weight: bold;
             background-color: #ffc107;
             color: green;
-            width: 100%;
-            font-size: 20px;
-            padding: 20px;
+            width: 90%; /* Adjusted width */
+            font-size: 24px; /* Reduced font size */
+            padding: 15px; /* Reduced padding */
             box-sizing: border-box;
         }
-
+    
         .donate-button:hover {
             background-color: #e0a800;
         }
-
+    
         button {
             padding: 10px 20px;
             margin: 5px;
@@ -84,13 +84,13 @@
             border-radius: 5px;
             font-size: 16px;
             box-sizing: border-box;
-            width: 100%;
+            width: auto; /* Adjusted width */
         }
-
+    
         button:hover {
             background-color: #218838;
         }
-
+    
         .back-button,
         .next-button {
             position: absolute;
@@ -99,151 +99,95 @@
             color: green;
             border: none;
             border-radius: 50%;
-            padding: 10px;
-            width: 50px;
-            height: 50px;
             cursor: pointer;
-            font-size: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
+    
         .back-button:hover,
         .next-button:hover {
             background-color: #e0a800;
         }
-
+    
         .back-button {
-            left: 10%;
+            left: 5%; /* Adjusted position */
         }
-
+    
         .next-button {
-            right: 10%;
+            right: 5%; /* Adjusted position */
         }
-
-        .nav-buttons {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-        }
-
-        .nav-buttons button {
-            padding: 10px;
-            margin: 5px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .nav-buttons button:hover {
-            background-color: #0056b3;
-        }
-
+    
         .nav-links button {
             margin: 0;
             background-color: transparent;
             border: none;
             color: green;
-            font-size: 24px;
             cursor: pointer;
             text-align: left;
             font-weight: bold;
             position: absolute;
             width: auto;
-            padding: 20px;
             box-sizing: border-box;
         }
-
+    
         .nav-links button:hover {
             text-decoration: underline;
         }
-
-        /* Media queries for large portrait screens */
-        @media screen and (min-width: 768px) and (min-height: 1024px) {
-            button {
-                padding: 20px 40px;
-                margin: 10px;
-                font-size: 70px;
-                width: auto;
-            }
-
-            .donate-button {
-                font-size: 70px;
-                padding: 30px;
-                width: 100%;
-
-            }
-
-            .back-button,
-            .next-button {
-                width: 80px;
-                height: 80px;
-                padding: 20px;
-                font-size: 70px;
-            }
-
-            .nav-links button {
-                font-size: 70px;
-                padding: 30px;
-                width: auto;
-            }
-
-            .footer-logo {
-                position: absolute;
-                bottom: 0;
-                right: 5%;
-                text-align: left;
-                background-color: transparent;
-                /* Transparent background */
-                padding: 15px;
-                box-sizing: border-box;
-            }
-
-            .footer-logo span {
-                /* display: block; */
-                font-size: 30px;
-                color: #000;
-                margin-bottom: 5px;
-            }
-
-            .footer-logo img {
-                height: 40px;
-            }
-
-        }
-
-        /*--------Footer--------*/
+    
         .footer-logo {
             position: absolute;
-            bottom: 0;
+            bottom: 10px; /* Lowered position */
             right: 5%;
             text-align: left;
             background-color: transparent;
-            /* Transparent background */
             padding: 5px;
             box-sizing: border-box;
         }
-
+    
         .footer-logo span {
-            /* display: block; */
             font-size: 10px;
             color: #000;
             margin-bottom: 5px;
         }
-
+    
         .footer-logo img {
             height: 30px;
         }
-
+    
         .video .footer-logo {
             display: none;
         }
+    
+        /* Media queries for 1080x1920 resolution */
+        @media screen and (min-width: 1080px) and (min-height: 1920px) {
+            .donate-button {
+                font-size: 60px;
+                padding: 25px;
+                width: 100%;
+                white-space: nowrap; /* Ensures text doesn't wrap */
+            }
+    
+            .back-button,
+            .next-button {
+                width: 80px;
+                height: 80px;
+                font-size: 60px;
+            }
+    
+            .nav-links button {
+                font-size: 60px;
+                padding: 50px 0 0 40px; /*Top Right Bottom Left*/
+                white-space: nowrap; /* Ensures text doesn't wrap */
+                width: 100%;
+            }
+    
+            .footer-logo {
+                bottom: 30px;
+            }
+        }
     </style>
+    
 </head>
 
 <body>
@@ -252,7 +196,7 @@
         <div class="slide" id="slide1">
             <img src="slide1.webp" alt="Slide 1">
             <button class="next-button" onclick="nextSlide()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M8.59 16.59L13.17 12l-4.58-4.59L10 6l6 6-6 6z" />
                 </svg>
             </button>
@@ -271,7 +215,7 @@
         <div class="slide" id="slide3">
             <img src="slide3.webp" alt="Slide 3">
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
@@ -279,7 +223,7 @@
         <div class="slide" id="slide4">
             <img src="slide4.webp" alt="Slide 4">
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
@@ -287,7 +231,7 @@
         <div class="slide" id="slide5">
             <img src="slide5.webp" alt="Slide 5">
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
@@ -300,7 +244,7 @@
                 <button class="donate-button" onclick="showSlide(6)">طريقة التبرع</button>
             </div>
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
@@ -308,7 +252,7 @@
         <div class="slide" id="slide7">
             <img src="slide7.webp" alt="Slide 7">
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
@@ -316,12 +260,12 @@
         <div class="slide" id="slide8">
             <img src="slide8.webp" alt="Slide 8">
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
             <button class="next-button" onclick="nextSlide()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M8.59 16.59L13.17 12l-4.58-4.59L10 6l6 6-6 6z" />
                 </svg>
             </button>
@@ -329,7 +273,7 @@
         <div class="slide" id="slide9">
             <img src="slide9.webp" alt="Slide 9">
             <button class="back-button" onclick="showSlide(1)">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
                     <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
                 </svg>
             </button>
